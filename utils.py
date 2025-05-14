@@ -98,7 +98,8 @@ def compute_rij(configs, a_ji):
     # print(r_ij) # the rij of the first config
     return r_ij
 
+# Compute the coverage matrix r_ij
 def compute_rij_weight(configs, a_ji):
-    configs_np = np.array(configs)
-    r_ij = configs_np @ a_ji
-    return r_ij.T
+    configs_np = np.array(configs) # Convert configs to a numpy array
+    r_ij = configs_np @ a_ji # Matrix multiplication to compute coverage
+    return r_ij.T # Transpose to match the expected shape
